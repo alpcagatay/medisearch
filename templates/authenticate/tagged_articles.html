@@ -1,0 +1,42 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<br> 
+<br>
+<br> 
+<br> 
+
+    <center>
+        {% if tagged_articles %}
+            {% for article in tagged_articles %}
+            <b><p align="left"><font size="+2">{{ article.title }}<br/></font></font></b>
+
+
+            <b><p align="left"><font size="+2">Tags:
+                {% for tag in article.tags.all %}
+                    <span>{{ tag.tag_name }}</span>
+                {% endfor %}
+
+            </font></font></b>
+            
+            <i><p align="left"> <font size="-1">  {{ article.author }}<br/></font></p> </i>
+            </p> 
+            <div align="justify"><font size="-1"> {{ article.abstracts }}<br/></div> </font>
+            <p align="left"> <font size="-2">  Keywords: {{ article.keywords }}<br/></font></p>     
+            </p> 
+            </p>
+            {% endfor %}
+
+        {% else %}
+        <h1> Not found</h1>
+        {% endif %}
+
+
+
+</center>
+
+
+
+
+{% endblock %}

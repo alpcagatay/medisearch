@@ -1,0 +1,35 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+    <center>
+        {% if searched %}
+            <h1>You searched for " {{ searched }} "</h1>
+            <br(>
+            </p> 
+            </p> 
+            {% for article in article %}
+                <form class="form-group" method=POST action="{% url 'tag_article' article.id_name %}">
+                    {%csrf_token%}
+                    <div class="form-group"
+                    <p align="right" ><input type = "tags" placeholder = "Type in your tag here" name = "tags" id="tags_id" value = "" maxlength = "60", si<e="30"/>
+                    <input type = "submit" name = "Tag" value = "Tag"></b></p>
+                </form>
+            <b><p align="left"><font size="+2">{{ article.title }}<br/></font></font></b>
+            <i><p align="left"> <font size="-1">  {{ article.author }}<br/></font></p> </i>
+            </p> 
+            <div align="justify"><font size="-1"> {{ article.abstracts }}<br/></div> </font>
+            <p align="left"> <font size="-2">  Keywords: {{ article.keywords }}<br/></font></p>     
+            </p> 
+            </p> 
+            {% endfor %}
+
+
+        {% else %}
+        <h1> You did not search anything</h1>
+        {% endif %}
+
+
+
+</center>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<br> 
+<br>
+<br> 
+<br> 
+
+<center><h1><font size="+2">Welcome to MediSearch</font></h1></center>
+
+<div align="justify"><ul>
+<li> Medisearch is a website which includes articles fetched from pubmed API.</li> 
+<li>Articles are about "asthma" diseases. </li>
+<li>By using the search area located on the upper right corner you may search for articles.</li>
+<li>You may register by using Register button on top of the page</li>
+<li>If you are already registered you may use the Login button</li>
+<li>After Login you may tag your articles as you like.</li>
+</ul></div>
+{% if user.is_authenticated %}
+    <p>Name: {{ user.first_name}} {{ user.last_name}} </p>
+    <p>Username: {{ user.username}}</p>
+    <p>Email: {{ user.email}}</p>
+
+{% endif %}
+
+{% endblock %}
