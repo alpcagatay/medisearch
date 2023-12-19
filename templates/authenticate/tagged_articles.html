@@ -12,7 +12,6 @@
             {% for article in tagged_articles %}
             <b><p align="left"><font size="+2">{{ article.title }}<br/></font></font></b>
 
-
             <b><p align="left"><font size="+2">Tags:
                 {% for tag in article.tags.all %}
                     <span>{{ tag.tag_name }}</span>
@@ -32,11 +31,6 @@
         <h1> Not found</h1>
         {% endif %}
 
-
-
 </center>
-
-
-
 
 {% endblock %}
